@@ -209,34 +209,66 @@ function initFormValidation() {
         return;
       }
       
-      // Simulate loading state
+      // Show loading state
       if (submitBtn) {
         submitBtn.classList.add('btn-loading');
         submitBtn.disabled = true;
       }
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Success
-      if (submitBtn) {
-        submitBtn.classList.remove('btn-loading');
-        submitBtn.disabled = false;
-      }
-      
-      if (alertSuccess) {
-        alertSuccess.classList.add('show');
-      }
-      
-      // Reset form
-      form.reset();
-      
-      // Clear file upload display
-      const fileUpload = form.querySelector('.file-upload');
-      if (fileUpload) {
-        fileUpload.classList.remove('has-file');
-        const fileName = fileUpload.querySelector('.file-upload-name');
-        if (fileName) fileName.textContent = '';
+      try {
+        // Determine API endpoint based on form type
+        const formData = new FormData(form);
+        let apiEndpoint = '/api/order';
+        
+        // Check if this is a contact form (no file upload field)
+        const hasFileInput = form.querySelector('input[type="file"]');
+        if (!hasFileInput) {
+          apiEndpoint = '/api/contact';
+        }
+        
+        const response = await fetch(apiEndpoint, {
+          method: 'POST',
+          body: formData,
+        });
+        
+        const result = await response.json();
+        
+        if (submitBtn) {
+          submitBtn.classList.remove('btn-loading');
+          submitBtn.disabled = false;
+        }
+        
+        if (!response.ok) {
+          throw new Error(result.error || 'Failed to submit form');
+        }
+        
+        // Success
+        if (alertSuccess) {
+          alertSuccess.classList.add('show');
+        }
+        
+        // Reset form
+        form.reset();
+        
+        // Clear file upload display
+        const fileUpload = form.querySelector('.file-upload');
+        if (fileUpload) {
+          fileUpload.classList.remove('has-file');
+          const fileName = fileUpload.querySelector('.file-upload-name');
+          if (fileName) fileName.textContent = '';
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        
+        if (submitBtn) {
+          submitBtn.classList.remove('btn-loading');
+          submitBtn.disabled = false;
+        }
+        
+        if (alertError) {
+          alertError.textContent = error.message || 'An error occurred. Please try again.';
+          alertError.classList.add('show');
+        }
       }
     });
   });
