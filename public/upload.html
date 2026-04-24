@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upload your ECU file for professional tuning. Fast processing, secure upload, expert calibration.">
+  <meta name="keywords" content="ECU file upload, tuning file upload, chip tuning order">
+  <meta name="theme-color" content="#dc2626">
+  
+  <title>Upload File - TurboTune Pro | Order ECU Tuning</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23dc2626' rx='20' width='100' height='100'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white'>T</text></svg>">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <span>TurboTune<span class="text-gradient">Pro</span></span>
+      </a>
+      
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="how-it-works.html" class="nav-link">How It Works</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="upload.html" class="btn btn-primary nav-cta">Order File</a>
+      </div>
+      
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="section-label">Order Tuning File</span>
+      <h1>Upload Your ECU File</h1>
+      <p>Fill out the form below and upload your original ECU file. Average delivery time is 30 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Upload Form Section -->
+  <section class="upload-section">
+    <div class="container">
+      <form class="upload-form" data-validate>
+        <!-- Alert Messages -->
+        <div class="alert alert-success">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Your file has been submitted successfully! You will receive a confirmation email shortly.</span>
+        </div>
+        
+        <div class="alert alert-error">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>Please fill in all required fields correctly.</span>
+        </div>
+        
+        <!-- Contact Information -->
+        <h3 style="margin-bottom: 1.5rem;">Contact Information</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name *</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="John Smith" required>
+            <span class="form-error">Please enter your name</span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address *</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+            <span class="form-error">Please enter a valid email</span>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 234 567 8900">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="company">Company Name</label>
+            <input type="text" id="company" name="company" class="form-input" placeholder="Your Tuning Shop">
+          </div>
+        </div>
+        
+        <!-- Vehicle Information -->
+        <h3 style="margin: 2rem 0 1.5rem;">Vehicle Information</h3>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="make">Vehicle Make *</label>
+            <select id="make" name="make" class="form-select" required>
+              <option value="">Select Make</option>
+              <option value="Audi">Audi</option>
+              <option value="BMW">BMW</option>
+              <option value="Ford">Ford</option>
+              <option value="Mercedes">Mercedes-Benz</option>
+              <option value="Volkswagen">Volkswagen</option>
+              <option value="Porsche">Porsche</option>
+              <option value="Seat">Seat</option>
+              <option value="Skoda">Skoda</option>
+              <option value="Opel">Opel</option>
+              <option value="Renault">Renault</option>
+              <option value="Peugeot">Peugeot</option>
+              <option value="Citroen">Citroen</option>
+              <option value="Fiat">Fiat</option>
+              <option value="Alfa Romeo">Alfa Romeo</option>
+              <option value="Volvo">Volvo</option>
+              <option value="Jaguar">Jaguar</option>
+              <option value="Land Rover">Land Rover</option>
+              <option value="Mini">Mini</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Honda">Honda</option>
+              <option value="Nissan">Nissan</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="form-error">Please select vehicle make</span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="model">Vehicle Model *</label>
+            <input type="text" id="model" name="model" class="form-input" placeholder="e.g., Golf GTI" required>
+            <span class="form-error">Please enter vehicle model</span>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="year">Year *</label>
+            <select id="year" name="year" class="form-select" required>
+              <option value="">Select Year</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+              <option value="older">2009 or older</option>
+            </select>
+            <span class="form-error">Please select year</span>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="engine">Engine Code / Size *</label>
+            <input type="text" id="engine" name="engine" class="form-input" placeholder="e.g., 2.0 TSI / CJXC" required>
+            <span class="form-error">Please enter engine details</span>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="ecu">ECU Type</label>
+            <input type="text" id="ecu" name="ecu" class="form-input" placeholder="e.g., Bosch MED17.5">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="tool">Reading Tool</label>
+            <select id="tool" name="tool" class="form-select">
+              <option value="">Select Tool</option>
+              <option value="KESS V2">KESS V2</option>
+              <option value="KTAG">KTAG</option>
+              <option value="Autotuner">Autotuner</option>
+              <option value="CMD Flash">CMD Flash</option>
+              <option value="PCMFlash">PCMFlash</option>
+              <option value="BitBox">BitBox</option>
+              <option value="Trasdata">Trasdata</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Service Selection -->
+        <h3 style="margin: 2rem 0 1.5rem;">Service Required</h3>
+        
+        <div class="form-group">
+          <label class="form-label" for="service">Tuning Service *</label>
+          <select id="service" name="service" class="form-select" required>
+            <option value="">Select Service</option>
+            <option value="Stage 1">Stage 1 - Stock Hardware ($49)</option>
+            <option value="Stage 2">Stage 2 - With Intake/Exhaust ($79)</option>
+            <option value="Stage 3">Stage 3 / Custom ($149+)</option>
+            <option value="Eco">Eco Tuning ($49)</option>
+            <option value="DSG">DSG/Gearbox Tuning ($69)</option>
+            <option value="Custom">Custom Request (Contact for price)</option>
+          </select>
+          <span class="form-error">Please select a service</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Additional Options</label>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+              <input type="checkbox" name="options" value="dpf" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary);">
+              <span style="color: var(--text-secondary);">DPF Delete (+$30)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+              <input type="checkbox" name="options" value="egr" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary);">
+              <span style="color: var(--text-secondary);">EGR Delete (+$20)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+              <input type="checkbox" name="options" value="adblue" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary);">
+              <span style="color: var(--text-secondary);">AdBlue Delete (+$40)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+              <input type="checkbox" name="options" value="pops" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary);">
+              <span style="color: var(--text-secondary);">Pops & Bangs (+$25)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+              <input type="checkbox" name="options" value="launch" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary);">
+              <span style="color: var(--text-secondary);">Launch Control (+$20)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+              <input type="checkbox" name="options" value="speed" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary);">
+              <span style="color: var(--text-secondary);">Speed Limiter Off (+$15)</span>
+            </label>
+          </div>
+        </div>
+        
+        <!-- File Upload -->
+        <h3 style="margin: 2rem 0 1.5rem;">Upload ECU File</h3>
+        
+        <div class="form-group">
+          <div class="file-upload">
+            <input type="file" id="file" name="file" accept=".bin,.ori,.mod,.fls,.hex">
+            <div class="file-upload-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+            </div>
+            <h4>Drop your file here or click to browse</h4>
+            <p>Accepted formats: .bin, .ori, .mod, .fls, .hex (max 10MB)</p>
+            <div class="file-upload-name"></div>
+          </div>
+        </div>
+        
+        <!-- Notes -->
+        <div class="form-group">
+          <label class="form-label" for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" class="form-textarea" placeholder="Any special requirements, hardware modifications, or additional information..."></textarea>
+        </div>
+        
+        <!-- Submit -->
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <span class="btn-text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+              </svg>
+              Submit Order
+            </span>
+          </button>
+        </div>
+        
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-muted);">
+          By submitting this form, you agree to our <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Privacy Policy</a>.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="features" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3>Secure Upload</h3>
+          <p>All uploads are encrypted with 256-bit SSL. Your files and data are protected with enterprise-grade security.</p>
+        </div>
+        
+        <div class="feature-card animate-on-scroll animate-delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3>Fast Delivery</h3>
+          <p>Average turnaround time of 30 minutes. Rush processing available for urgent orders.</p>
+        </div>
+        
+        <div class="feature-card animate-on-scroll animate-delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+          <h3>Free Revisions</h3>
+          <p>Unlimited free revisions until you and your customer are completely satisfied with the results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span>TurboTune<span class="text-gradient">Pro</span></span>
+          </a>
+          <p>Professional ECU tuning files for automotive experts worldwide. Unleash performance, delivered fast.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Quick Links</h4>
+          <nav class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="services.html" class="footer-link">Services</a>
+            <a href="how-it-works.html" class="footer-link">How It Works</a>
+            <a href="pricing.html" class="footer-link">Pricing</a>
+          </nav>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Services</h4>
+          <nav class="footer-links">
+            <a href="services.html" class="footer-link">Stage 1 Tuning</a>
+            <a href="services.html" class="footer-link">Stage 2 Tuning</a>
+            <a href="services.html" class="footer-link">DPF Delete</a>
+            <a href="services.html" class="footer-link">DSG Tuning</a>
+          </nav>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Support</h4>
+          <nav class="footer-links">
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="upload.html" class="footer-link">Upload File</a>
+            <a href="#" class="footer-link">FAQ</a>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 TurboTune Pro. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
