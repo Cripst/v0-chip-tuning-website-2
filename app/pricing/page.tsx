@@ -6,13 +6,27 @@ import { Reveal } from "@/components/reveal-animation"
 
 export const metadata: Metadata = {
   title: "Pricing | E PERFORMANCE",
-  description: "Simple ECU file service pricing for Stage 1, Stage 2 and custom tuning. Contact us for reseller and bulk pricing.",
+  description: "Clear ECU file pricing for Stage Eco, Stage 1, Stage 2 and Flex Fuel. Contact us for reseller and bulk pricing.",
 }
 
 const pricingPlans = [
   {
+    name: "Stage Eco",
+    price: "€40",
+    suffix: "/ file",
+    description: "Economy remaps for smoother drivability and better daily efficiency.",
+    features: [
+      "Fuel-saving target maps",
+      "Balanced torque delivery",
+      "Stock hardware compatible"
+    ],
+    href: "/upload",
+    cta: "Order Stage Eco",
+    popular: false
+  },
+  {
     name: "Stage 1",
-    price: "€70",
+    price: "€50",
     suffix: "/ file",
     description: "Best for stock vehicles requiring a safe performance increase and smooth drivability.",
     features: [
@@ -26,7 +40,7 @@ const pricingPlans = [
   },
   {
     name: "Stage 2",
-    price: "€110",
+    price: "€90",
     suffix: "/ file",
     description: "Ideal for upgraded hardware setups requiring more detailed boost, torque and fueling optimization.",
     features: [
@@ -39,17 +53,17 @@ const pricingPlans = [
     popular: true
   },
   {
-    name: "Custom",
-    price: "From €150",
-    suffix: "",
-    description: "For Stage 3, DSG tuning, special functions, built engines and platform-specific custom development.",
+    name: "Flex Fuel",
+    price: "€120",
+    suffix: "/ file",
+    description: "Flexible fuel mapping support for E85 and blended fuel configurations.",
     features: [
-      "Custom setup review",
-      "Advanced revision workflow",
-      "Special requests supported"
+      "E85 and flex fuel support",
+      "Adaptive fueling logic",
+      "Safe blend switching"
     ],
-    href: "/contact",
-    cta: "Request Quote",
+    href: "/upload",
+    cta: "Order Flex Fuel",
     popular: false
   }
 ]
@@ -105,6 +119,15 @@ export default function PricingPage() {
                 <div className="flex justify-center">
                   <Button href="/contact" variant="secondary">Contact for Reseller Pricing</Button>
                 </div>
+              </Card>
+            </Reveal>
+            <Reveal delay={400}>
+              <Card className="mt-7.5 text-center border border-rose-500 bg-[rgba(248,113,113,0.05)]" hover={false}>
+                <h3 className="text-[1.25rem] font-semibold mb-2.5">Special package price</h3>
+                <p className="text-[#f8d8d8] text-lg font-semibold">
+                  Stage 1 + DPF + EGR + AdBlue = Only €100
+                </p>
+                <p className="text-[#9ca3af] mt-4">Ask us about this bundled tuning package for workshop clients.</p>
               </Card>
             </Reveal>
           </div>
