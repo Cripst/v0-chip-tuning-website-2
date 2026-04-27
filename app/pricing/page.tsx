@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const pricingCategories = [
   {
-    name: "ECU Remap",
+    name: "ECU REMAP:",
     items: [
       { label: "Stage Eco", price: "40€" },
       { label: "Stage 1", price: "50€" },
@@ -20,7 +20,7 @@ const pricingCategories = [
     ],
   },
   {
-    name: "Solutions",
+    name: "SOLUTIONS:",
     items: [
       { label: "EGR", price: "30€" },
       { label: "DPF", price: "30€" },
@@ -29,7 +29,7 @@ const pricingCategories = [
     ],
   },
   {
-    name: "Extra Options",
+    name: "EXTRA OPTIONS:",
     items: [
       { label: "Hardcut", price: "30€" },
       { label: "Pop & Bang", price: "30€" },
@@ -48,7 +48,7 @@ export default function PricingPage() {
         <PageHero
           eyebrow="Pricing"
           title="Requested Price List"
-          description="ECU remap, add-on solutions and extra tuning options based on your requested package prices."
+          description="Requested prices for ECU remap, solutions and extra options."
           breadcrumb="Pricing"
         />
 
@@ -63,7 +63,7 @@ export default function PricingPage() {
               {pricingCategories.map((category, index) => (
                 <Reveal key={index} delay={index * 100}>
                   <Card className="h-full">
-                    <h3 className="text-[1.7rem] font-bold uppercase tracking-wide">{category.name}</h3>
+                    <h3 className="text-[1.7rem] font-bold tracking-wide">{category.name}</h3>
                     <ul className="mt-5 space-y-2.5 text-[1.15rem] leading-[1.35]">
                       {category.items.map((item) => (
                         <li key={item.label} className="font-semibold">
@@ -77,21 +77,14 @@ export default function PricingPage() {
             </div>
 
             <Reveal delay={300}>
-              <Card className="mt-7.5 text-center" hover={false}>
-                <h3 className="text-[1.25rem] font-semibold mb-2.5">Bulk and reseller pricing available</h3>
-                <p className="text-[#9ca3af] mb-5">Contact us for workshop packages, high-volume pricing and white-label reseller collaboration.</p>
-                <div className="flex justify-center">
-                  <Button href="/contact" variant="secondary">Contact for Reseller Pricing</Button>
-                </div>
-              </Card>
-            </Reveal>
-            <Reveal delay={400}>
               <Card className="mt-7.5 text-center border border-rose-500 bg-[rgba(248,113,113,0.05)]" hover={false}>
-                <h3 className="text-[1.25rem] font-semibold mb-2.5">Special package price</h3>
-                <p className="text-[#f8d8d8] text-lg font-semibold">
+                <h3 className="text-[1.6rem] font-bold mb-2.5 uppercase tracking-wide">SPECIAL PACKAGE PRICE:</h3>
+                <p className="text-[#f8d8d8] text-[clamp(1.5rem,3.2vw,2.1rem)] font-bold leading-tight">
                   Stage 1 + DPF + EGR + AdBlue = Only 100€
                 </p>
-                <p className="text-[#9ca3af] mt-4">Ask us about this bundled tuning package for workshop clients.</p>
+                <div className="mt-6">
+                  <Button href="/contact" variant="secondary">Contact Us</Button>
+                </div>
               </Card>
             </Reveal>
           </div>
