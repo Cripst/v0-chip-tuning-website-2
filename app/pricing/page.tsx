@@ -1,70 +1,42 @@
 import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { PageHero, Card, FeatureList, Button } from "@/components/ui-elements"
+import { PageHero, Card, Button } from "@/components/ui-elements"
 import { Reveal } from "@/components/reveal-animation"
 
 export const metadata: Metadata = {
   title: "Pricing | E PERFORMANCE",
-  description: "Clear ECU file pricing for Stage Eco, Stage 1, Stage 2 and Flex Fuel. Contact us for reseller and bulk pricing.",
+  description: "Requested price list for ECU remap, tuning solutions and extra options.",
 }
 
-const pricingPlans = [
+const pricingCategories = [
   {
-    name: "Stage Eco",
-    price: "€40",
-    suffix: "/ file",
-    description: "Economy remaps for smoother drivability and better daily efficiency.",
-    features: [
-      "Fuel-saving target maps",
-      "Balanced torque delivery",
-      "Stock hardware compatible"
+    name: "ECU Remap",
+    items: [
+      { label: "Stage Eco", price: "40€" },
+      { label: "Stage 1", price: "50€" },
+      { label: "Stage 2", price: "90€" },
+      { label: "Flex Fuel", price: "120€" }
     ],
-    href: "/upload",
-    cta: "Order Stage Eco",
-    popular: false
   },
   {
-    name: "Stage 1",
-    price: "€50",
-    suffix: "/ file",
-    description: "Best for stock vehicles requiring a safe performance increase and smooth drivability.",
-    features: [
-      "Stock hardware support",
-      "Fast turnaround",
-      "Basic revision support"
+    name: "Solutions",
+    items: [
+      { label: "EGR", price: "30€" },
+      { label: "DPF", price: "30€" },
+      { label: "AdBlue", price: "40€" },
+      { label: "Lambda", price: "30€" }
     ],
-    href: "/upload",
-    cta: "Order Stage 1",
-    popular: false
   },
   {
-    name: "Stage 2",
-    price: "€90",
-    suffix: "/ file",
-    description: "Ideal for upgraded hardware setups requiring more detailed boost, torque and fueling optimization.",
-    features: [
-      "Modified hardware support",
-      "Refined calibration logic",
-      "Priority communication"
+    name: "Extra Options",
+    items: [
+      { label: "Hardcut", price: "30€" },
+      { label: "Pop & Bang", price: "30€" },
+      { label: "Vmax", price: "20€" },
+      { label: "Flaps", price: "20€" },
+      { label: "Start & Stop", price: "30€" }
     ],
-    href: "/upload",
-    cta: "Order Stage 2",
-    popular: true
-  },
-  {
-    name: "Flex Fuel",
-    price: "€120",
-    suffix: "/ file",
-    description: "Flexible fuel mapping support for E85 and blended fuel configurations.",
-    features: [
-      "E85 and flex fuel support",
-      "Adaptive fueling logic",
-      "Safe blend switching"
-    ],
-    href: "/upload",
-    cta: "Order Flex Fuel",
-    popular: false
   }
 ]
 
@@ -75,38 +47,30 @@ export default function PricingPage() {
       <main>
         <PageHero
           eyebrow="Pricing"
-          title="Clear packages for professional tuners"
-          description="Use these starter prices for presentation purposes. In production, connect them to your own pricing logic or CRM."
+          title="Requested Price List"
+          description="ECU remap, add-on solutions and extra tuning options based on your requested package prices."
           breadcrumb="Pricing"
         />
 
         <section className="py-[72px]">
           <div className="w-[min(calc(100%-2rem),1200px)] mx-auto">
+            <Reveal>
+              <h2 className="text-center text-[clamp(1.75rem,4vw,2.5rem)] font-bold tracking-wide mb-8">
+                REQUESTED PRICE LIST
+              </h2>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {pricingPlans.map((plan, index) => (
+              {pricingCategories.map((category, index) => (
                 <Reveal key={index} delay={index * 100}>
-                  <Card 
-                    className={`relative overflow-hidden h-full ${
-                      plan.popular ? "border-[rgba(56,189,248,0.35)] -translate-y-1.5" : ""
-                    }`}
-                  >
-                    {plan.popular && (
-                      <span className="absolute right-4.5 top-4.5 px-3 py-1.5 rounded-full bg-[rgba(56,189,248,0.14)] border border-[rgba(56,189,248,0.25)] text-[#bcecff] text-[0.8rem] font-bold">
-                        Most Popular
-                      </span>
-                    )}
-                    <h3 className="text-[1.25rem] font-semibold">{plan.name}</h3>
-                    <div className="flex items-baseline gap-2 mt-2.5 mb-4.5">
-                      <strong className="text-[3rem] font-[family-name:var(--font-space-grotesk)]">{plan.price}</strong>
-                      {plan.suffix && <span className="text-[#9ca3af]">{plan.suffix}</span>}
-                    </div>
-                    <p className="text-[#9ca3af]">{plan.description}</p>
-                    <FeatureList items={plan.features.map(text => ({ text }))} />
-                    <div className="mt-5">
-                      <Button href={plan.href} variant="primary" className="w-full">
-                        {plan.cta}
-                      </Button>
-                    </div>
+                  <Card className="h-full">
+                    <h3 className="text-[1.7rem] font-bold uppercase tracking-wide">{category.name}</h3>
+                    <ul className="mt-5 space-y-2.5 text-[1.15rem] leading-[1.35]">
+                      {category.items.map((item) => (
+                        <li key={item.label} className="font-semibold">
+                          * {item.label} - {item.price}
+                        </li>
+                      ))}
+                    </ul>
                   </Card>
                 </Reveal>
               ))}
@@ -125,7 +89,7 @@ export default function PricingPage() {
               <Card className="mt-7.5 text-center border border-rose-500 bg-[rgba(248,113,113,0.05)]" hover={false}>
                 <h3 className="text-[1.25rem] font-semibold mb-2.5">Special package price</h3>
                 <p className="text-[#f8d8d8] text-lg font-semibold">
-                  Stage 1 + DPF + EGR + AdBlue = Only €100
+                  Stage 1 + DPF + EGR + AdBlue = Only 100€
                 </p>
                 <p className="text-[#9ca3af] mt-4">Ask us about this bundled tuning package for workshop clients.</p>
               </Card>
